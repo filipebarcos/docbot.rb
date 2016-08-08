@@ -2,5 +2,7 @@ require 'dotenv'
 Dotenv.load
 
 module Docbot
-  autoload :Documentation
+  require_relative 'docbot/documentation'
+  require_relative 'docbot/slack/client'
+  require_relative 'docbot/slack/message'
 end
