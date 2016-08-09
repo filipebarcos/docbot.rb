@@ -1,9 +1,3 @@
-require 'dotenv'
-Dotenv.load
-require_relative 'docbot/documentation'
-require_relative 'docbot/slack/client'
-require_relative 'docbot/slack/message'
-
 module Docbot
   def self.message(class_method)
     documentation = Documentation.new.for(class_method)
