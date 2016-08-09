@@ -18,6 +18,6 @@ module Docbot
   end
 
   def self.fail_message(text)
-    "Sorry, I could not find documentation for #{text}."
+    "Sorry, I could not find documentation for `#{text}`."
   end
 end

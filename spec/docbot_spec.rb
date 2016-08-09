@@ -29,7 +29,7 @@ RSpec.describe Docbot do
       let(:doc_return) { nil }
 
       it 'replies with polite message' do
-        expect(Docbot.message(class_method)).to eq "Sorry, I could not find documentation for #{class_method}."
+        expect(Docbot.message(class_method)).to eq "Sorry, I could not find documentation for `#{class_method}`."
       end
     end
   end
