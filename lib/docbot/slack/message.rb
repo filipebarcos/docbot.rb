@@ -1,7 +1,6 @@
 module Docbot
   module Slack
     class Message
-
       POST_MESSAGE = 'chat.postMessage'
 
       def initialize(client = Client.new)
@@ -18,7 +17,6 @@ module Docbot
       end
 
       private
-
       attr_reader :client
     end
   end

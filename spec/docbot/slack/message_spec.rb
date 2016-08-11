@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'docbot/slack/message'
 require 'docbot/slack/client'
 

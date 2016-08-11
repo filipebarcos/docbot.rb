@@ -1,4 +1,3 @@
-require 'spec_helper'
 require 'docbot'
 
 RSpec.describe Docbot do
