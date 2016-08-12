@@ -31,8 +31,8 @@ module Docbot
       end
 
       def handle_message_event
-        if data['text'] =~ /\A\w+\#\w+\Z/
-          { ok: true, message: Docbot.message(data['text']), channel: data['channel'] }
+        if message = Docbot::Message.new.parse(data['text'])
+          { ok: true, message: message, channel: data['channel'] }
         else
           { ok: false }
         end
