@@ -45,3 +45,5 @@ script/run
 5. Using HTTParty: Besides it adding a new dependency to my project, HTTParty get it cleaner, instead of having to deal with HTTP/Net madness.
 
 6. Namespaces: I tried to leave things separated by namespaces to make easier to know where to find things. Doing so, it's easy to know where to fix a bug around slack integration. Also, modularizing things makes easier to test and ensure my application works.
+
+7. If you're interested in reading this code: Please, consider starting from `app.rb`. It is the running piece of the app, everything else is used "there".
