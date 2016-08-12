@@ -1,4 +1,5 @@
 if ENV.fetch('RACK_ENV', "development") != 'production'
+  require 'pry'
   require 'dotenv'
   Dotenv.load
 end
