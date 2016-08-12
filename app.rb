@@ -5,8 +5,6 @@ require 'eventmachine'
 Signal.trap("INT")  { exit }
 Signal.trap("TERM") { exit }
 
-@bot_user = nil
-
 EM.run do
   response = Docbot::Slack::Rtm.start
   ws_url = response[:url]
