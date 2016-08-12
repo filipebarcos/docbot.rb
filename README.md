@@ -3,7 +3,6 @@
 Your bot that helps you with Ruby Docs.
 
 ## Setup your environment
-
 ```sh
 git clone https://github.com/filipebarcos/docbot.rb.git
 cd docbot.rb/
@@ -27,7 +26,6 @@ $EDITOR .env
 ```
 
 ## Running the Application
-
 ```sh
 script/run
 ```
