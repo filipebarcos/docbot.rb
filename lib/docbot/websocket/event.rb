@@ -7,9 +7,10 @@ module Docbot
 
       attr_reader :data
 
-      def initialize(raw)
-        @raw = raw
+      def initialize(botuser_id: nil, raw_data:)
+        @raw_data = raw_data
         @data = parse
+        @botuser_id = botuser_id
       end
 
       def handle
@@ -22,16 +23,16 @@ module Docbot
       end
 
       private
-      attr_reader :raw
+      attr_reader :raw_data, :botuser_id
 
       def parse
-        JSON.parse(raw)
+        JSON.parse(raw_data)
       rescue => e
         {}
       end
 
       def handle_message_event
-        if message = Docbot::Message.new.parse(data['text'])
+        if message = Docbot::Message.new(botuser_id: botuser_id).parse(data['text'])
           { ok: true, message: message, channel: data['channel'] }
         else
           { ok: false }

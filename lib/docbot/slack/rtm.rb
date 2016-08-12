@@ -13,7 +13,9 @@ module Docbot
 
       def start
         response = @client.request(path: START, params: opts)
-        response["url"] if response.has_key?("ok") && response["ok"]
+        if response.has_key?("ok") && response["ok"]
+          { url: response["url"], botuser: response["self"]["id"] }
+        end
       end
 
       private

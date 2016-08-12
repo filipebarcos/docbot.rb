@@ -2,7 +2,7 @@ require 'docbot/websocket/event'
 
 RSpec.describe Docbot::Websocket::Event do
   describe '#handle' do
-    subject { described_class.new(raw_data) }
+    subject { described_class.new(raw_data: raw_data) }
     context 'when data fails to be parsed' do
       let(:raw_data) { nil }
 

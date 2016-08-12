@@ -8,13 +8,16 @@ Signal.trap("TERM") { exit }
 @bot_user = nil
 
 EM.run do
-  ws_url = Docbot::Slack::Rtm.start
+  response = Docbot::Slack::Rtm.start
+  ws_url = response[:url]
+  botuser_id = response[:botuser]
+
   ws = Faye::WebSocket::Client.new(ws_url)
 
   ws.on(:open) { |_| puts "Connected to Slack Chat" }
 
   ws.on :message do |event|
-    ws_event = Docbot::Websocket::Event.new(event.data)
+    ws_event = Docbot::Websocket::Event.new(botuser_id: botuser_id, raw_data: event.data)
     puts "[#{Time.now.utc.iso8601}] Received: #{ws_event.data.inspect}"
 
     response = ws_event.handle
